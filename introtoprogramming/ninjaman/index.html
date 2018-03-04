@@ -1,0 +1,189 @@
+<html>
+    <head>
+        <title>NinjaMan</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="world"></div>
+        <div id="ninjaman"></div>
+        <div id="bluey"></div>
+        <div id="pinky"></div>
+        <div id="pumpky"></div>
+        <div id="red"></div>
+    </body>
+    <script type="text/javascript">
+        var totalRow = Math.floor((Math.random() * 9) + 7);
+        var totalCol = Math.floor((Math.random() * 9) + 7);
+
+        var world = [];
+        for (var row = 0; row < totalRow; row++) {
+            world[row] = [];
+        }
+
+        for (var row = 0; row < totalRow; row++) {
+            for (var col = 0; col < totalCol; col++) {
+                if (row === 0 || col === 0 || row === totalRow - 1 || col === totalCol - 1) {
+                    world[row].push(0);
+                }
+                else if (row === 1 && col === 1) {
+                    world[row].push(1);
+                }
+                else {
+                    world[row].push(Math.floor((Math.random() * 3) + 1));
+                }
+            }
+        }
+
+        var worldDict = {
+            0: 'wall',
+            1: 'blank',
+            2: 'sushi',
+            3: 'onigiri'
+        }
+
+        var ninjaman = {
+            x: 1,
+            y: 1,
+            score: 0,
+            lives: 3
+        }
+
+        var bluey = {
+            x: Math.floor((Math.random() * (totalCol - 3)) + 2),
+            y: Math.floor((Math.random() * (totalRow - 2)) + 1)
+        }
+
+        var pinky = {
+            x: Math.floor((Math.random() * (totalCol - 3)) + 2),
+            y: Math.floor((Math.random() * (totalRow - 2)) + 1)
+        }
+
+        var pumpky = {
+            x: Math.floor((Math.random() * (totalCol - 3)) + 2),
+            y: Math.floor((Math.random() * (totalRow - 2)) + 1)
+        }
+
+        var red = {
+            x: Math.floor((Math.random() * (totalCol - 3)) + 2),
+            y: Math.floor((Math.random() * (totalRow - 2)) + 1)
+        }
+
+        var ghosts = [bluey, pinky, pumpky, red];
+
+
+        function drawWorld() {
+            output = "";
+            
+            for (var row = 0; row < world.length; row++) {
+                output += "<div class='row'>"
+                for (var x = 0; x < world[row].length; x++) {
+                    output += "<div class='" + worldDict[world[row][x]] + "'></div>";
+                }
+                output += "</div>";
+            }
+
+            output += "<p>Score: " + ninjaman.score + "</p>";
+            output += "<p>Lives: " + ninjaman.lives + "</p>"
+
+            document.getElementById('world').innerHTML = output;
+
+        }
+
+        function drawNinjaman() {
+            document.getElementById('ninjaman').style.top = ninjaman.y * 40 + 'px';
+            document.getElementById('ninjaman').style.left = ninjaman.x * 40 + 'px';
+        }
+
+        function drawGhosts() {
+            document.getElementById('bluey').style.top = bluey.y * 40 + 'px';
+            document.getElementById('bluey').style.left = bluey.x * 40 + 'px';
+            document.getElementById('pinky').style.top = pinky.y * 40 + 'px';
+            document.getElementById('pinky').style.left = pinky.x * 40 + 'px';
+            document.getElementById('pumpky').style.top = pumpky.y * 40 + 'px';
+            document.getElementById('pumpky').style.left = pumpky.x * 40 + 'px';
+            document.getElementById('red').style.top = red.y * 40 + 'px';
+            document.getElementById('red').style.left = red.x * 40 + 'px';
+        }
+
+        drawWorld();
+        drawNinjaman();
+        drawGhosts();
+        
+
+        document.onkeydown = function(e) {
+            for(var i = 0; i < ghosts.length; i++) {
+                var ghostMovement = Math.floor(Math.random() * 4);
+                switch(ghostMovement) {
+                case 0:
+                    if (world[ghosts[i].y][ghosts[i].x - 1] != 0) {
+                        ghosts[i].x--;
+                    }
+                    break;
+                case 1:
+                    if (world[ghosts[i].y][ghosts[i].x + 1] != 0) {
+                        ghosts[i].x++;
+                    }
+                    break;
+                case 2:
+                    if (world[ghosts[i].y - 1][ghosts[i].x] != 0) {
+                        ghosts[i].y--;
+                    }
+                    break;  
+                case 3:
+                    if (world[ghosts[i].y + 1][ghosts[i].x] != 0) {
+                        ghosts[i].y++;
+                    }
+                    break;          
+                }
+            }
+
+
+            if(e.keyCode == 37) {
+                if (world[ninjaman.y][ninjaman.x - 1] != 0) {
+                    ninjaman.x--;
+                }
+            }
+            else if(e.keyCode == 38) {
+                if (world[ninjaman.y - 1][ninjaman.x] != 0) {
+                    ninjaman.y--;
+                }
+            }
+            else if(e.keyCode == 39) {
+                if (world[ninjaman.y][ninjaman.x + 1] != 0) {
+                    ninjaman.x++;
+                }
+            }
+            else if(e.keyCode == 40) {
+                if (world[ninjaman.y + 1][ninjaman.x] != 0) {
+                    ninjaman.y++;
+                }
+            }
+            
+            for(var i = 0; i < ghosts.length; i++) {
+                if(ghosts[i].x === ninjaman.x && ghosts[i].y === ninjaman.y) {
+                    ninjaman.lives--;
+                    if(ninjaman.lives === 0) {
+                        console.log("Game Over");
+                    }
+                    ninjaman.x = 1;
+                    ninjaman.y = 1;
+                    for(var index = 0; index < ghosts.length; index++) {
+                        ghosts[index].x = Math.floor((Math.random() * (totalCol - 3)) + 2);
+                        ghosts[index].y = Math.floor((Math.random() * (totalRow - 2)) + 1);
+                    }
+                }
+            }
+
+            if(world[ninjaman.y][ninjaman.x] === 2) {
+                ninjaman.score += 5;
+            }
+            else if(world[ninjaman.y][ninjaman.x] === 3) {
+                ninjaman.score += 10;
+            }
+            world[ninjaman.y][ninjaman.x] = 1;
+            drawWorld();
+            drawNinjaman();
+            drawGhosts();
+        }
+    </script>
+</html>
