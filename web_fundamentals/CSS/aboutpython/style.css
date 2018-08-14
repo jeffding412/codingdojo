@@ -1,0 +1,275 @@
+/*CSS reset settings here*/
+* {
+    margin: 0px;
+    padding: 0px;
+    height: auto;
+    background-color: rgb(35, 95, 145);
+    width: 980px;
+}
+
+img {
+    width: 500px;
+    padding: 15px;
+    margin: 15px;
+}
+
+#header {
+    min-height: 150px;
+}
+
+#upperright {
+    width: 350px;
+    min-height: 113px;
+    padding: 15px;
+    margin: 15px;
+}
+
+.headercontent {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.headercontent p {
+    display: block;
+    width: 300px;
+    text-align: right;
+    color: white;
+}
+
+.headercontent span {
+    color: black;
+}
+
+.headercontent a {
+    color: rgb(226, 193, 8);
+}
+
+form {
+    width: 340px;
+    height: 75px;
+    display: block;
+    border-radius: 15px;
+    background-color: rgb(65, 62, 62);
+    margin-top: 5px;
+    box-shadow: 2px 2px;
+}
+
+form input {
+    background-color: white;
+    margin: 20px 0px 20px 40px;
+    padding: 10px 0;
+    width: 210px;
+    text-align: center;
+    display: inline-block;
+    border: gray solid 1px;
+}
+
+form button {
+    display: inline-block;
+    background-color: rgb(35, 95, 145);
+    width: 40px;
+    height: 30px;
+    margin-left: 5px;
+    border-radius: 5px;
+    color: white;
+}
+
+nav {
+    min-height: 50px;
+    width: 800px;
+    margin: 15px 115px;
+    background-color: rgba(9, 111, 194, 0.897);
+    box-shadow: 2px 2px;
+    border-radius: 10px;
+}
+
+nav a {
+    background-color: rgba(9, 111, 194, 0.897);
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    margin-left: 45px;
+}
+
+#bruh {
+    margin-top: 10px;
+}
+
+#navmenu {
+    width: 800px;
+    margin-top: 12px;
+    background-color: rgba(9, 111, 194, 0.897);
+}
+
+#middle {
+    width: 800px;
+    margin: 15px 115px;
+}
+
+#links {
+    width: 200px;
+    margin: 20px;
+    text-align: center;
+    display: inline-block;
+}
+
+#links li {
+    margin: 15px;
+    width: 150px;
+    font-size: 8px;
+    color: gold;
+}
+
+#links ul {
+    list-style-type: none;
+}
+
+a {
+    color: white;
+    font-size: 15px;
+}
+
+#words {
+    display: inline-block;
+    width: 550px;
+    vertical-align: top;
+}
+
+#middle p {
+    color: white;
+    display: block;
+    width: 500px;
+    margin: 15px 25px;
+    text-align: center;
+    font-size: 15px;
+}
+
+#words h2 {
+    color: gold;
+    font-style: italic;
+    text-align: center;
+    width: 550px;
+    margin-top: 15px;
+    font-size: 15px;
+}
+
+#main {
+    background-color: white;
+    padding-bottom: 20px;
+}
+
+#left {
+    vertical-align: top;
+    display: inline-block;
+    width: 400px;
+    margin-left: 100px;
+    background-color: white;
+    text-align: center;
+}
+
+#right {
+    display: inline-block;
+    width: 400px;
+    background-color: white;
+    margin-left: 10px;
+    text-align: center;
+}
+
+.blueline {
+    background-color: rgb(18, 162, 245);
+    width: 385px;
+    margin: 15px 0 0 15px;
+    height: 5px;
+}
+
+#left h4 {
+    margin: 10px 0;
+    background-color: white;
+    width: 400px;
+}
+
+#right h4 {
+    margin: 10px 0;
+    background-color: white;
+    width: 400px;
+}
+
+#left p {
+    background-color: white;
+    width: 400px;
+    margin: 10px 0;
+}
+
+#left ul {
+    width: 400px;
+    background-color: white;
+    margin-left: 50px;
+}
+
+#left ul li {
+    width: 300px;
+    background-color: white;
+    list-style-type: square;
+}
+
+#left li a {
+    width: 400px;
+    background-color: white;
+    color: dodgerblue;
+    text-decoration: none;
+}
+
+#right p {
+    background-color: white;
+    width: 400px;
+    margin: 10px 0;
+}
+
+#right ul {
+    width: 400px;
+    background-color: white;
+    margin-left: 50px;
+}
+
+#right ul li {
+    width: 300px;
+    background-color: white;
+    list-style-type: square;
+}
+
+#right li a {
+    width: 400px;
+    background-color: white;
+    color: dodgerblue;
+    text-decoration: none;
+}
+
+#right p a {
+    background-color: white;
+    color: dodgerblue;
+}
+
+footer {
+    padding-top: 100px;
+    height: 50px;
+    width: 400px;
+    text-align: center;
+}
+
+footer li {
+    display: inline-block;
+    width: 250px;
+}
+
+footer a {
+    text-decoration: none;
+    color: lightblue;
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+footer p {
+    margin-top: 20px;
+    font-size: 10px;
+    color: lightblue;
+}

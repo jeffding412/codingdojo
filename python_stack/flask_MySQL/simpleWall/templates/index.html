@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Login and Registration</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="jumbotron">
+                <h1>Login and Registration</h1>
+                <div class="row">
+                    <div class="col">
+                        <h2>Register Here!</h2>
+                        <form action='/register' method='post'>
+                            <div class="form-group">
+                                <label>First Name:</label>
+                                {% with errors = get_flashed_messages(category_filter=["first"]) %}
+                                {% if errors %}
+                                    {%- for msg in errors %}
+                                    <p class="text-danger">{{ msg }}</p>
+                                    {% endfor -%}
+                                {% endif %}
+                                {% endwith %}
+                                <input type="name" class="form-control" name="first" placeholder="Enter first name">
+                            </div>  
+                            <div class="form-group">
+                                <label>Last Name:</label>
+                                {% with errors = get_flashed_messages(category_filter=["last"]) %}
+                                {% if errors %}
+                                    {%- for msg in errors %}
+                                    <p class="text-danger">{{ msg }}</p>
+                                    {% endfor -%}
+                                {% endif %}
+                                {% endwith %}
+                                <input type="name" class="form-control" name="last" placeholder="Enter last name">
+                            </div>  
+                            <div class="form-group">
+                                <label>Email:</label>
+                                {% with errors = get_flashed_messages(category_filter=["email"]) %}
+                                {% if errors %}
+                                    {%- for msg in errors %}
+                                    <p class="text-danger">{{ msg }}</p>
+                                    {% endfor -%}
+                                {% endif %}
+                                {% endwith %}
+                                <input type="email" class="form-control" name="email" placeholder="Enter email">
+                            </div>
+                            <div class="form-group">
+                                <label>Password:</label>
+                                {% with errors = get_flashed_messages(category_filter=["password"]) %}
+                                {% if errors %}
+                                    {%- for msg in errors %}
+                                    <p class="text-danger">{{ msg }}</p>
+                                    {% endfor -%}
+                                {% endif %}
+                                {% endwith %}
+                                <input type="password" class="form-control" name="password" placeholder="Password">
+                            </div>
+                            <div class="form-group">
+                                <label>Confirm Password:</label>
+                                {% with errors = get_flashed_messages(category_filter=["confirm"]) %}
+                                {% if errors %}
+                                    {%- for msg in errors %}
+                                    <p class="text-danger">{{ msg }}</p>
+                                    {% endfor -%}
+                                {% endif %}
+                                {% endwith %}
+                                <input type="password" class="form-control" name="confirm" placeholder="Confirm password">
+                            </div>
+                            <button type="submit" class="btn btn-success">Register</button>
+                        </form>
+                    </div>
+                    <div class="col">
+                        <h2>Login Here!</h2>
+                        <form action='/login' method='post'>
+                            {% with errors = get_flashed_messages(category_filter=["login"]) %}
+                                {% if errors %}
+                                    {%- for msg in errors %}
+                                    <p class="text-danger">{{ msg }}</p>
+                                    {% endfor -%}
+                                {% endif %}
+                            {% endwith %}
+                            <div class="form-group">
+                                <label>Email:</label>
+                                <input type="email" class="form-control" name="email" placeholder="Enter email">
+                            </div>
+                            <div class="form-group">
+                                <label>Password:</label>
+                                <input type="password" class="form-control" name="password" placeholder="Password">
+                            </div>
+                            <button type="submit" class="btn btn-success">Login</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

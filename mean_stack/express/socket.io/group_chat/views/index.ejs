@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Group Chat</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+        <script type ="text/javascript">
+            $(document).ready(function (){
+                while(name == null || name == "") {
+                    name = prompt("Your name");
+                }
+
+                var socket = io.connect();
+                
+                socket.on('show_messages', function (data) {
+                    for (i in data.messages) {
+                        var para = document.createElement("p");
+                        var node = document.createTextNode(data.messages[i].sender + ": " + data.messages[i].message);
+                        para.appendChild(node);
+                        var element = document.getElementById("display");
+                        element.appendChild(para);
+                    }
+                });
+
+                socket.on('update_messages', function (data) {
+                    var para = document.createElement("p");
+                    var node = document.createTextNode(data.text.sender + ": " + data.text.message);
+                    para.appendChild(node);
+                    var element = document.getElementById("display");
+                    element.appendChild(para);
+                });
+
+                $('form').submit(function() {
+                    var data = {
+                        sender: name,
+                        message: $('input').val(),
+                    }
+                    socket.emit('message', data);
+                    return false;
+                });
+            })
+        </script>
+    </head>
+    <body>
+        <div class="container text-center">
+            <h1 class="text-left">Conversation Board</h1>
+            <div class="jumbotron text-left" id="display">
+
+            </div>
+            <form>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Enter your message here">
+                </div>
+                <div class="text-right">
+                    <button type="submit" class="btn btn-primary">Send</button>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

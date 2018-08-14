@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Result</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="container">
+            <h1 class="text-center">Submitted Information</h1>
+            <div class="jumbotron">
+                <h3>Name: <%= data.name %></h3>
+                <h3>Dojo Location: <%= data.dojo %></h3>
+                <h3>Favorite Language: <%= data.language %></h3>
+                <h3>Comment: <%= data.comment %></h3>
+                <a href="/" class="btn btn-primary">Go Back</a>
+            </div>
+        </div>
+    </body>
+</html>

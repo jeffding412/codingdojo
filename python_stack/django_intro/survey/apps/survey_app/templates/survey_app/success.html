@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Success</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="jumbotron">
+                <h1>Submitted</h1>
+                <h3>Name: {{request.session.name}}</h3>
+                <h3>Dojo Location: {{request.session.location}}</h3>
+                <h3>Favorite Language: {{request.session.language}}</h3>
+                <h3>Comments:</h3>
+                <p>{{request.session.comment}}</p>
+                <a class="btn btn-primary" href="/">Go Back</a>
+            </div>
+        </div>
+    </body>
+</html>

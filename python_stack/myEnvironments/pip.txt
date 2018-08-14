@@ -1,0 +1,21 @@
+pip install Django==1.11.9 : installed Django version 1.11.9 packages pytz and Django
+
+pip list : listed all installed packages
+
+deactivate : deactivates virtual enviroment
+
+pip3 list : listed all installed packages not previously installed in a virtual machine, default installed packages essentially
+
+source myEnvironments/py3Env/bin/activate : activates virtual enviroment
+
+pip install Django==1.11.9 : outputs message already installed
+
+pip freeze : lists installed packages in pip list that are not listed in pip3 list, or packages only installed in virtual enviroment
+
+pip freeze > requirements.txt : creates a .txt file called requirements.txt that contains the output of pip freeze, or the virtual enviroment installed packages
+
+pip uninstall Django : uninstalls Django
+
+pip show Django : lists Django version, but Django already uninstalled
+
+pip search Flask : searches for PyPl packages whose name or summary contains Flask

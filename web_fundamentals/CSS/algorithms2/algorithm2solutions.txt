@@ -1,0 +1,99 @@
+Jeffrey Ding
+Algorithm 2 Solutions
+
+Part 1
+
+1.
+
+b = multiply(2,3) = undefined
+
+multiply(2,3):
+    x = 2
+    y = 3
+    print x
+    print y
+    returns undefined
+
+print b
+
+console: 2, 3, undefined
+
+2.
+
+b = multiply(2,3) = 6
+
+multiply(2,3):
+    x = 2
+    y = 3
+    return x*y = 2*3 = 6
+
+print b
+print multiply(5,2) = 10
+
+multiply(5,2):
+    x = 5
+    y = 2
+    return x*y = 5*2 = 10
+
+console: 6, 10
+
+3.
+
+x = [1,2,3,4,5,10]
+i = 0 -> 3 -> 4 -> 7 -> 8
+
+console: 3, 7
+
+4.
+
+x = 15 -> 10
+print x
+print x
+
+awesome():
+    print x
+
+print x
+
+console: 15, 15, 10, 10
+
+5. 
+
+i = 0 -> 2 -> 4 -> 6 -> 8 -> 10 -> 12 -> 14 -> 16
+
+console: 0, 2, 4, 6, 8, 10, 12, 14
+
+6. 
+
+i = 0 -> 1 -> 2 -> 3
+j = 0 -> 1 -> 2 -> 0 -> 1 -> 2 -> 0 -> 1 -> 2
+
+console: 0, 0, 0, 1, 0, 2
+
+7.
+
+z = looping(3,3) = undefined
+
+looping(3,3):
+    x = 3
+    y = 3
+    i = 0 -> 1 -> 2 -> 3
+    j = 0 -> 1 -> 2 -> 3 -> 0 -> 1 -> 2 -> 3 -> 0 -> 1 -> 2 -> 3
+    returns undefined
+
+print z 
+
+console: 0, 0, 0, 0, 1, 2, 0, 2, 4, undefined
+
+8.
+
+z = looping(3,5) = 15
+
+looping(3,5):
+    x = 3
+    y = 5
+    i = 0 -> 1 -> 2 -> 3
+    j = 0 -> 1 -> 2 -> 3 -> 4 -> 5 -> 0 -> 1 -> 2 -> 3 -> 4 -> 5 -> 0 -> 1 -> 2 -> 3 -> 4 -> 5
+    return x*y = 3*5 = 15
+
+console: 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 0, 2, 4, 6, 8, 15

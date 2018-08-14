@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="description" content="This is a fake blog">
+        <title>Fake Blog</title>
+    </head>
+    <body>
+        <h1>James Harden</h1>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/James_Harden_Rockets_cropped.jpg" alt="James Harden and his beard">
+        <div>
+            <p>James Edward Harden Jr. (born August 26, 1989) is an American professional basketball player for the Houston Rockets of the National Basketball Association (NBA). Harden played college basketball for Arizona State, where he was named a consensus All-American and Pac-10 Player of the Year in 2009. Harden was selected with the third overall pick in the 2009 NBA draft by the Oklahoma City Thunder.[1] In 2012, he was named NBA Sixth Man of the Year with the Thunder and helped the team reach the NBA Finals.</p>
+            <p>Harden was traded to Houston prior to the 2012–13 NBA season. Upon joining the Rockets, Harden became one of the NBA's most prolific scorers and earned recognition as the best shooting guard in the NBA,[2][3] as well as one of the top overall players in the league.[4] He has earned All-Star nods six times, and has earned All-NBA Team honors five times as well – four times to the All-NBA First Team (2014, 2015, 2017, 2018) and once to the All-NBA Third Team (2013). In 2015 and 2018, Harden was named MVP at the National Basketball Players Association's annual Players Awards, being voted by his peers as the league's most valuable player.</p>
+            <p>Harden is a two-time member of the United States national basketball team, winning gold medals in both the 2012 Summer Olympics and 2014 FIBA World Cup.</p>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Year</th>
+                    <th>Team</th>
+                    <th>PPG</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>2009-2010</td>
+                    <td>OKC</td>
+                    <td>9.9</td>
+                </tr>
+                <tr>
+                    <td>2010-2011</td>
+                    <td>OKC</td>
+                    <td>12.2</td>
+                </tr>
+                <tr>
+                    <td>2011-2012</td>
+                    <td>OKC</td>
+                    <td>16.8</td>
+                </tr>
+                <tr>
+                    <td>2012-2013</td>
+                    <td>HOU</td>
+                    <td>25.9</td>
+                </tr>
+                <tr>
+                    <td>2013-2014</td>
+                    <td>HOU</td>
+                    <td>25.4</td>
+                </tr>
+                <tr>
+                    <td>2014-2015</td>
+                    <td>HOU</td>
+                    <td>27.4</td>
+                </tr>
+                <tr>
+                    <td>2015-2016</td>
+                    <td>HOU</td>
+                    <td>29.0</td>
+                </tr>
+                <tr>
+                    <td>2016-2017</td>
+                    <td>HOU</td>
+                    <td>29.1</td>
+                </tr>
+                <tr>
+                    <td>2017-2018</td>
+                    <td>HOU</td>
+                    <td>30.4</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <ul>
+            <li>NBA MVP (2018)</li>
+            <li>6x NBA All-Star (2013-2018)</li>
+            <li>4x All-NBA First Team (2014, 2015, 2017, 2018)</li>
+            <li>All-NBA Third Team (2013)</li>
+            <li>NBA Sixth Man of the Year (2012)</li>
+            <li>NBA scoring champion (2018)</li>
+            <li>NBA assists leader (2017)</li>
+            <li>NBA All-Rookie Second Team (2010)</li>
+        </ul>
+
+        <a href="https://en.wikipedia.org/wiki/James_Harden#Regular_season">Learn More</a>
+    
+        <form action="process.php" method="post">
+            <label for="next">Who should we posted about next: </label>
+            <input type="text" id="next" name="next">
+
+            <p>Do you like James Harden?</p>
+            <label for="yes">Yes! Especially his beard!</label>
+            <input type="radio" id="yes" name="opinion" value="yes">
+            <label for="no">No! Overrated and overhyped!</label>
+            <input type="radio" id="no" name="opinion" value="no">
+
+            <p>Select any player you would like us to post next:</p>
+            <label for="durant">Kevin Durant, SF, GSW</label>
+            <input type="checkbox" id="durant" name="player" value="durant">
+            
+            <label for="green">Draymond Green, PF, GSW</label>
+            <input type="checkbox" id="green" name="player" value="green">
+           
+            <label for="curry">Stephen Curry, PG, GSW</label>
+            <input type="checkbox" id="curry" name="player" value="curry">
+            
+            <label for="thompson">Klay Thompson, SG, GSW</label>
+            <input type="checkbox" id="thompson" name="player" value="thompson">
+           
+            <label for="westbrook">Russell Westbrook, PG, OKC</label>
+            <input type="checkbox" id="westbrook" name="player" value="westbrook">
+
+            <br>
+            <br>
+
+            <label>Favorite thing about James Harden </label>
+            <select name="favorite">
+                <option value="beard">Beard</option>
+                <option value="offense">Offense</option>
+                <option value="defense">Defense</option>
+            </select>
+
+            <br>
+            <br>
+
+            <input type="submit" value="Submit">
+        </form>
+    </body>
+</html>

@@ -1,0 +1,110 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<!-- <div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+  <h3>Value of num is: {{num}}</h3>
+  <h3>Value of randNum is: {{randNum}}</h3>
+  <h3>{{str}}</h3>
+  <input type="text" [value]="first_name" />
+  <p *ngIf="loggedIn">You are logged in!</p>
+  <p *ngFor="let snack of snacks">{{snack}}</p>
+  <p *ngIf="snacks.length < 3">You need more snacks.</p>
+</div>
+<h2>Here are some links to help you start: </h2>
+<ul>
+  <li>
+    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
+  </li>
+  <li>
+    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
+  </li>
+  <li>
+    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
+  </li>
+</ul> -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    
+    <title>RESTful Tasks</title>
+  </head>
+  <body>
+    <div class="text-center">
+      <h1>Restful API Tasks</h1>
+      <!-- <h2>All the tasks:</h2> -->
+      <!-- <h2>The third task:</h2> -->
+      <!-- <p *ngIf="thirdTask">{{thirdTask.title}} - {{thirdTask.description}}</p> -->
+      <!-- <button (click)="getAllTasks()" >Get all tasks</button> -->
+      <div class="col-6 text-left">
+        <h4>New Task</h4>
+        <form (submit)="onSubmit()">
+          <!-- use the json pipe to see how newTask changes in real time -->
+          <!-- <p> {{ newTask | json }} </p> -->
+          <div class="form-group">
+            <label>Title</label>
+            <input type="text" class="form-control" name="newTask.title" [(ngModel)]="newTask.title">
+          </div>
+          <div class="form-group">
+            <label>Description</label>
+            <input type="text" class="form-control" name="newTask.description" [(ngModel)]="newTask.description">
+          </div>
+          <input type="submit" value="Create" class="btn btn-primary"/>
+        </form>
+      </div>
+      <div class="row">
+        <div class="col">
+          <h4>Task List</h4>
+          <div *ngFor="let task of tasks" class="card">
+            <div class="card-body text-left">
+              <p>{{task.title}}</p>
+              <p>{{task.description}}</p>
+              <div class="row text-center">
+                <button class="btn btn-primary" (click)="getTask(task._id)">Edit</button>
+                <button class="btn btn-danger" (click)="deleteTaskByID(task._id)">Delete</button>
+              </div>
+            </div>
+            <!-- <button (click)="getTask('5b6bbf079745b16fe4677f1d')" >Get all tasks</button> -->
+            <!-- <button (click)="getTask(task._id)" >Show</button> -->
+            <!-- <hr> -->
+          </div>
+        </div>
+        <div class="col" *ngIf="task">
+            <div class="card">
+              <div class="card-body text-left">
+                <h4>Edit a task</h4>
+                <form (submit)="editOnSubmit()">
+                  <div class="form-group">
+                    <label>Title</label>
+                    <input type="text" class="form-control" name="task.title" [(ngModel)]="task.title">
+                  </div>
+                  <div class="form-group">
+                    <label>Description</label>
+                    <input type="text" class="form-control" name="task.description" [(ngModel)]="task.description">
+                  </div>
+                  <input type="submit" value="Update" class="btn btn-primary"/>
+                </form>
+              </div>
+            </div>
+        </div>
+      </div>
+      <!-- <button (click)="onButtonClickParam(5)">Click me!</button> -->
+      <!-- <button (click)="onButtonClickParams(5, 'hello')">Click me!</button> -->
+      <!-- <button (click)="onButtonClickEvent($event)">Click me!</button> -->
+    </div>
+  </body>
+</html>
+

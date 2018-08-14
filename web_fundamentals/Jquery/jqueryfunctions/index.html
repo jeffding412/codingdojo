@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Jquery Functions</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="main.js"></script>
+    </head>
+    <body>
+        <div class="container-fluid jumbotron">
+            <div class="row">
+                <div class="col-4">
+                    <button type="button" class="btn btn-primary" id="hideButton">Hide</button>
+                </div>
+                <div class="col-8">
+                    <h1>Hide</h1>
+                    <p id="hide">Click the button to hide this paragraph</p>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-4">
+                    <button type="button" class="btn btn-primary" id="showButton">Show</button>
+                </div>
+                <div class="col-8">
+                    <h1>Show</h1>
+                    <p id="show">Click the button to show this paragraph</p>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-4">
+                    <button type="button" class="btn btn-primary" id="toggleButton">Toggle</button>
+                </div>
+                <div class="col-8">
+                    <h1>Toggle</h1>
+                    <p id="toggle">Click the button to toggle this paragraph</p>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-4">
+                    <button type="button" class="btn btn-primary" id="slideDownButton">Slide Down</button>
+                </div>
+                <div class="col-8">
+                    <h1>Slide Down</h1>
+                    <p>Click the button twice to slide down this image</p>
+                    <img src="placeholder.png" id="slideDown" alt="">
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-4">
+                    <button type="button" class="btn btn-primary" id="slideUpButton">Slide Up</button>
+                </div>
+                <div class="col-8">
+                    <h1>Slide Down</h1>
+                    <p>Click the button to slide up this image</p>
+                    <img src="placeholder.png" id="slideUp" alt="">
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-4">
+                    <button type="button" class="btn btn-primary" id="slideToggleButton">Slide Toggle</button>
+                </div>
+                <div class="col-8">
+                    <h1>Slide Toggle</h1>
+                    <p>Click the button to slide toggle this image</p>
+                    <img src="placeholder.png" id="slideToggle" alt="">
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-4">
+                    <button type="button" class="btn btn-primary" id="fadeInButton">Fade In</button>
+                </div>
+                <div class="col-8">
+                    <h1>Fade In</h1>
+                    <p>Click the button to fade in this image</p>
+                    <img src="placeholder.png" id="fadeIn" alt="">
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-4">
+                    <button type="button" class="btn btn-primary" id="fadeOutButton">Fade Out</button>
+                </div>
+                <div class="col-8">
+                    <h1>Fade Out</h1>
+                    <p>Click the button to fade out this image</p>
+                    <img src="placeholder.png" id="fadeOut" alt="">
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-4">
+                    <button type="button" class="btn btn-primary" id="addClassButton">Add Class</button>
+                </div>
+                <div class="col-8">
+                    <h1>Add Class</h1>
+                    <p id="addClass">Click the button to add the class "text-center" to this paragraph</p>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-4">
+                    <button type="button" class="btn btn-primary" id="beforeButton">Before</button>
+                </div>
+                <div class="col-8">
+                    <h1>Before</h1>
+                    <p id="before">Click the button to add another paragraph before this paragraph</p>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-4">
+                    <button type="button" class="btn btn-primary" id="afterButton">After</button>
+                </div>
+                <div class="col-8">
+                    <h1>After</h1>
+                    <p id="after">Click the button to add another paragraph after this paragraph</p>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-4">
+                    <button type="button" class="btn btn-primary" id="appendButton">Append</button>
+                </div>
+                <div class="col-8">
+                    <h1>Append</h1>
+                    <p id="append">Click the button to append another to this paragraph</p>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-4">
+                    <button type="button" class="btn btn-primary" id="htmlButton">HTML</button>
+                </div>
+                <div class="col-8">
+                    <h1>HTML</h1>
+                    <p id="html">Click the button to change the HTML of paragraph</p>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-4">
+                    <button type="button" class="btn btn-primary" id="attrButton">Attr</button>
+                </div>
+                <div class="col-8">
+                    <h1>Attr</h1>
+                    <p id="attr" title="Attribute Example">Click the button to append attribute 'title' of this paragraph</p>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-4">
+                    <button type="button" class="btn btn-primary" id="valButton">Val</button>
+                </div>
+                <div class="col-8">
+                    <h1 id="head">Val</h1>
+                    <select id="vals">
+                        <option>Val1</option>
+                        <option>Val2</option>
+                    </select>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-4">
+                    <button type="button" class="btn btn-primary" id="textButton">Text</button>
+                </div>
+                <div class="col-8">
+                    <h1>Text</h1>
+                    <p id="text">Click the button to append the same text</p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

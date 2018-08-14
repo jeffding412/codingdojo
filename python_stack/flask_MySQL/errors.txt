@@ -1,0 +1,25 @@
+Traceback (most recent call last):
+  File "/Users/dingzhengfuaa/Desktop/python_stack/myEnvironments/py3Env/lib/python3.6/site-packages/pymysql/connections.py", line 582, in connect
+    **kwargs)
+  File "/usr/local/Cellar/python/3.6.5_1/Frameworks/Python.framework/Versions/3.6/lib/python3.6/socket.py", line 724, in create_connection
+    raise err
+  File "/usr/local/Cellar/python/3.6.5_1/Frameworks/Python.framework/Versions/3.6/lib/python3.6/socket.py", line 713, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "server.py", line 8, in <module>
+    mysql = connectToMySQL('mydb')
+  File "/Users/dingzhengfuaa/Desktop/python_stack/flask_MySQL/mysqlconnection.py", line 48, in connectToMySQL
+    return MySQLConnection(db)
+  File "/Users/dingzhengfuaa/Desktop/python_stack/flask_MySQL/mysqlconnection.py", line 15, in __init__
+    autocommit = True)
+  File "/Users/dingzhengfuaa/Desktop/python_stack/myEnvironments/py3Env/lib/python3.6/site-packages/pymysql/__init__.py", line 94, in Connect
+    return Connection(*args, **kwargs)
+  File "/Users/dingzhengfuaa/Desktop/python_stack/myEnvironments/py3Env/lib/python3.6/site-packages/pymysql/connections.py", line 327, in __init__
+    self.connect()
+  File "/Users/dingzhengfuaa/Desktop/python_stack/myEnvironments/py3Env/lib/python3.6/site-packages/pymysql/connections.py", line 629, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on 'localhost' ([Errno 61] Connection refused)")

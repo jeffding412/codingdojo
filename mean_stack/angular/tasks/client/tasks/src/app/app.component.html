@@ -1,0 +1,46 @@
+<fieldset>
+  <legend>New Task</legend>
+  <form (submit)="onSubmit()">
+    <!-- use the json pipe to see how newTask changes in real time -->
+    <!-- <p> {{ newTask | json }} </p> -->
+    <input type="text" name="newTask.title" [(ngModel)]="newTask.title" />
+    <input type="text" name="newTask.description" [(ngModel)]="newTask.description" />
+    <input type="submit" value="Create Task" />
+  </form>
+</fieldset>
+
+<fieldset>
+  <legend>To do Tasks</legend>
+  <table border=1>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Duration</th>
+      <th>Stop?</th>
+    </tr>
+    <tr *ngFor="let task of todoTasks">
+      <td>{{task.title}}</td>
+      <td>{{task.description}}</td>
+      <td>{{task.duration}}</td>
+      <td><button (click)="endTask(task._id)">Stop</button></td>
+    </tr>
+  </table>
+</fieldset>
+
+<fieldset>
+    <legend>Completed Tasks</legend>
+    <table border=1>
+      <tr>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Total time</th>
+        <th>Delete?</th>
+      </tr>
+      <tr *ngFor="let task of completedTasks">
+        <td>{{task.title}}</td>
+        <td>{{task.description}}</td>
+        <td>{{task.duration}}</td>
+        <td><button (click)="deleteTask(task._id)">Delete me</button></td>
+      </tr>
+    </table>
+  </fieldset>

@@ -1,0 +1,14 @@
+1. select address.city_id, city.city, customer.first_name, customer.last_name, customer.email, address.address from customer join address on address.address_id = customer.address_id join city on city.city_id = address.city_id where address.city_id = 312;
+
+2. select film.film_id, film.title, film.description, film.release_year, film.rating, film.special_features, category.name as genre from category join film_category on film_category.category_id = category.category_id join film on film.film_id = film_category.film_id where category.name = "comedy";
+
+3. select film_actor.actor_id, concat(actor.first_name, ' ', actor.last_name) as actor_name, film.film_id, film.title, film.description, film.release_year from film_actor join film on film.film_id = film_actor.film_id join actor on actor.actor_id = film_actor.actor_id where film_actor.actor_id = 5;
+
+4. select store_id, city_id, first_name, last_name, email, address from customer join address on address.address_id = customer.address_id where store_id = 1 and (city_id = 1 or city_id = 42 or city_id = 312 or city_id = 459);
+
+5. select title, description, release_year, rating, special_features from film_actor join actor on actor.actor_id = film_actor.actor_id join film on film.film_id = film_actor.film_id where film_actor.actor_id = 15 and rating = "G" and special_features like '%behind the scenes%';
+
+6. select film_actor.film_id, film.title, film_actor.actor_id, concat(actor.first_name, ' ', actor.last_name) as actor_name from film_actor join film on film.film_id = film_actor.film_id join actor on actor.actor_id = film_actor.actor_id  where film_actor.film_id = 369;
+
+7. select film.film_id, title, description, release_year, rating, special_features, category.name as genre, rental_rate from film_category join category on category.category_id = film_category.category_id join film on film.film_id = film_category.film_id where rental_rate = 2.99 and category.name = "Drama";
+

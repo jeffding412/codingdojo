@@ -1,0 +1,51 @@
+* {
+    height: auto;
+    margin: 0px;
+}
+
+body {
+    background-color: navy;
+}
+
+h1 {
+    background-color: red;
+    color: lightblue;
+    border-radius: 15px;
+    padding: 15px;
+    margin: 15px;
+}
+
+nav {
+    background-color: lightseagreen;
+    color: aqua;
+    border-radius: 15px;
+    margin: 15px;
+    padding: 12px;
+    width: 200px;
+}
+
+main {
+    background-color: #111155;
+    color: lightcyan;
+    margin: 15px;
+    border-radius: 15px;
+    padding: 15px;
+    position: absolute;
+    left: 250px;
+    top: 82.5px;
+    height: 400px;
+}
+
+footer {
+    background-color: gray;
+    color: lightcyan;
+    display: block;
+    border-radius: 15px;
+    margin: 15px;
+    padding: 15px;
+    margin-top: 200px;
+}
+
+span {
+    color: blueviolet;
+}

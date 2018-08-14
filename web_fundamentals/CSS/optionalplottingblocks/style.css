@@ -1,0 +1,41 @@
+* {
+    text-align: center;
+    background-color: blanchedalmond;
+}
+
+img {
+    width: 100px;
+    display: inline-block;
+    border: 5px solid black;
+}
+
+.even {
+    background-color: salmon;
+    padding: 10px;
+}
+
+.odd {
+    background-color: cornflowerblue;
+    padding: 10px;
+}
+
+h1 {
+    display: inline;
+}
+
+#catandninja {
+    background: white;
+    border: 0px;
+}
+
+#github {
+    border: 0px;
+}
+
+#top {
+    margin-bottom: 5px;
+}
+
+#domo {
+    height: 100px;
+}

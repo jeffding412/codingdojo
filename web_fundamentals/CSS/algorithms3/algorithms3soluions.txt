@@ -1,0 +1,84 @@
+Zhengfu Ding
+
+Algorithms 3 Solutions
+
+1.
+
+print a(5,5) 
+
+a(5,5):
+    x = 5
+    y = 5
+    returns 5
+
+console: 5
+
+2.
+
+b = a(2,2) = [2, 2, 5]
+
+a(2,2):
+    x = 2
+    y = 2
+    z = [] -> [2] -> [2, 2] -> [2, 2, 5]
+    returns z
+
+print b
+print a(6,8)
+
+a(6,8):
+    x = 6
+    y = 8
+    z = [] -> [6] -> [6, 8] -> [6, 8, 5]
+    returns z
+
+console: [2, 2, 5], [2, 2, 5], [6, 8, 5], [6, 8, 5]
+
+3. 
+
+y = a(2) = [2, 2] -> [2, 2, 5]
+ 
+a(2):
+    x = 2
+    z = [] -> [2] -> [] -> [2] -> [2, 2]
+    returns z
+
+print y
+
+console: [2, 2, 5]
+
+4.
+
+b = a([2, 3, 4, 5]) = true
+
+a([2, 3, 4, 5]):
+    x = [2, 3, 4, 5]
+    returns true
+
+print b
+
+console: true
+
+5. 
+
+console: syntax errors (function a not closed)
+
+6. 
+
+console: syntax errors (function a not closed)
+
+7. 
+
+b = a([5, 10]) = 10
+
+a([5, 10]):
+    x = [5, 10]
+    returns 10
+
+print b
+
+console: 10
+
+8. 
+
+console: 

@@ -1,0 +1,261 @@
+/*CSS reset settings here*/
+*{
+    margin: 0px;
+    padding: 0px;
+    height: auto;
+    width: 980px;
+    outline: dotted red 1px;
+}
+
+#container {
+    background-color: white;
+    overflow: hidden;
+}
+
+header {
+    display: block;
+}
+
+#logo {
+    width: 125px;
+    position: absolute;
+}
+
+#title {
+    padding-left: 135px;
+    margin-top: 35px;
+    font-size: 50px;
+    color: rgb(77, 77, 77);
+}
+
+#title span {
+    color: rgb(5, 110, 216);
+}
+
+#title2 {
+    background-color: rgb(49, 133, 218);
+    padding: 15px;
+    color: white;
+    font-size: 40px;
+}
+
+#sidebar {
+    width: 240px;
+    display: inline-block;
+}
+
+#sidebar h3 {
+    padding: 20px 0 15px 10px;
+}
+
+#sidebar h3 span {
+    color: red;
+}
+
+#sidebar h4 {
+    width: 240px;
+    padding: 0 10px;
+}
+
+#sidebar h4 span {
+    color: rgb(51, 140, 230);
+}
+
+.buttons {
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    width: 240px;
+    padding: 15px 0 5px 0;
+}
+
+#first {
+    background-color: rgb(7, 99, 190);
+    width: 200px;
+    padding: 10px 0;
+    margin: 0px 20px;
+    display: block;
+}
+
+#second {
+    background-color: orange;
+    width: 200px;
+    padding: 10px 0;
+    margin: 5px 20px;
+    display: block;
+}
+
+.buttons a {
+    border-radius: 15px;
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+#banner {
+    background-image: url("images/ad_background.png");
+    text-align: center;
+    min-height: 390px;
+    width: 240px;;
+}
+
+#banner h3 {
+    color: white;
+    width: 220px;
+    font-size: 25px;
+}
+
+#ninja {
+    width: 200px;
+    margin-left: 15px;
+}
+
+#ninja img {
+    width: 100px;
+    margin: 10px;
+}
+
+h3 a {
+    font-size: 12px;
+    background-color: rgb(57, 197, 243);
+    color: white;
+    text-decoration: none;
+    padding: 10px 40px;
+    border-radius: 5px;
+}
+
+main {
+    display: inline-block;
+    vertical-align: top;
+    width: 735px;
+}
+
+#maintop {
+    width: 720px;
+    height: 75px;
+    margin: 5px;
+}
+
+h5 {
+    width: 465px;
+    margin-top: 10px;
+    margin-left: 10px;
+    display: inline-block;
+    vertical-align: top;
+    color: dodgerblue;
+}
+
+h5 img {
+    width: 25px;
+}
+
+#phone {
+    vertical-align: top;
+    width: 35px;
+    margin-top: 20px;
+}
+
+#contacts {
+    display: inline-block;
+    width: 200px;
+    margin-top: 10px;
+    font-size: 12px;
+    text-align: center;
+}
+
+#contacts p {
+    width: 200px;
+}
+
+#domestic {
+    font-size: 25px;
+    color: dodgerblue;
+}
+
+#servers {
+    display: block;
+    width: 720px;
+    margin: 5px;
+}
+
+#servers h3 {
+    color: rgb(25, 110, 196);
+    margin-left: 10px;
+}
+
+#servers p {
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+main a {
+    text-decoration: none;
+    color: rgb(24, 217, 224);
+}
+
+ul li {
+    width: 600px;
+    margin-top: 5px;
+}
+
+ul {
+    list-style-type: disc;
+    margin-top: 5px;
+    margin-left: 50px;
+}
+
+#client {
+    width: 300px;
+    margin: 5px 200px;  
+}
+
+#main2 {
+    display: block;
+    width: 720px;
+    margin: 5px;
+}
+
+#main2 h3 {
+    color: rgb(25, 110, 196);
+    margin-left: 10px;
+}
+
+ol li {
+    width: 600px;
+    margin-top: 5px;
+}
+
+ol {
+    margin-top: 5px;
+    margin-left: 50px;
+}
+
+#big3 {
+    width: 720px;
+    border: dodgerblue solid 3px;
+}
+
+#big3 img {
+    width: 150px;
+    margin: 15px;
+    display: inline-block;
+}
+
+#text {
+    width: 530px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+#big3 h3 {
+    width: 525px;
+    margin-top: 15px;
+    color: rgb(16, 101, 187);
+    margin-bottom: 10px;
+}
+
+#big3 p {
+    width: 525px;
+    font-size: 15px;
+    margin-top: 10px;
+}
