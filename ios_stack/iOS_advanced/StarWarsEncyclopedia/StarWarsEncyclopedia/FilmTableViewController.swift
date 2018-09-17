@@ -1,19 +1,19 @@
 //
-//  PeopleViewController.swift
+//  FilmTableViewController.swift
 //  StarWarsEncyclopedia
 //
-//  Created by Jeffrey Ding on 9/13/18.
+//  Created by Jeffrey Ding on 9/16/18.
 //  Copyright © 2018 Jeffrey Ding. All rights reserved.
 //
 
 import UIKit
 
-class PeopleViewController: UITableViewController, PersonViewControllerDelegate {
-    
-    var people = [String]()
+class FilmTableViewController: UITableViewController, PersonViewControllerDelegate {
+    var films = [String]()
+    var filmURLs = [String]()
     override func viewDidLoad() {
         super.viewDidLoad()
-        StarWarsModel.getAllPeople(completionHandler: {
+        StarWarsModel.getAllFilms(completionHandler: {
             // see: Swift closure expression syntax
             data, response, error in
             // data -> JSON data, response -> headers and other meta-information, error-> if one occurred
@@ -22,9 +22,10 @@ class PeopleViewController: UITableViewController, PersonViewControllerDelegate 
                 // try converting the JSON object to "Foundation Types" (NSDictionary, NSArray, NSString, etc.)
                 if let jsonResult = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as? NSDictionary {
                     if let results = jsonResult["results"] as? NSArray {
-                        for person in results {
-                            let personDict = person as! NSDictionary
-                            self.people.append(personDict["name"]! as! String)
+                        for film in results {
+                            let filmDict = film as! NSDictionary
+                            self.films.append(filmDict["title"]! as! String)
+                            self.filmURLs.append(filmDict["url"] as! String)
                         }
                     }
                     DispatchQueue.main.async {
@@ -36,7 +37,7 @@ class PeopleViewController: UITableViewController, PersonViewControllerDelegate 
             }
         })
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -46,30 +47,28 @@ class PeopleViewController: UITableViewController, PersonViewControllerDelegate 
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // return the count of people in our data array
-        return people.count
+        return films.count
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // Create a generic cell
         let cell = UITableViewCell()
         // set the default cell label to the corresponding element in the people array
-        cell.textLabel?.text = people[indexPath.row]
+        cell.textLabel?.text = films[indexPath.row]
         // return the cell so that it can be rendered
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "showPerson", sender: indexPath)
+        performSegue(withIdentifier: "showFilm", sender: indexPath)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showPerson" {
-            let personViewController = segue.destination as! PersonViewController
-            personViewController.delegate = self
-            
+        if segue.identifier == "showFilm" {
+            let filmViewController = segue.destination as! FilmViewController
+            filmViewController.delegate = self
             let indexPath = sender as! NSIndexPath
             let index = indexPath.row
-            personViewController.characterIndex = index
+            filmViewController.filmIndex = filmURLs[index]
         }
     }
 }
-
